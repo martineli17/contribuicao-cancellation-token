@@ -18,6 +18,8 @@ Em .NET, pelo menos, tem uma solução bem interessante e relativamente simples:
 No contexto de utilização em uma API, podemos injetar o CancellationToken diretamente no endpoint que desejamos. Ele será referenciado ao request enviado.
 Quando o CancellationToken for cancelado, essa mudança de evento será enviada para todos os restantes dos processos que o utilizam (se trata de um tipo complexo, então a passagem é feita por referência).
 ```c#
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
