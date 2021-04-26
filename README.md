@@ -79,7 +79,7 @@ Enviando o request - o request está em aberto.
 
 ![image](https://user-images.githubusercontent.com/50757499/116161390-0c9aac80-a6ca-11eb-9ce6-29f38c8e3139.png)
 
-Enquanto não cancelamos o request, a execução do código ocorre normalmente. A partir do momento que cancelamos o request - o cliente desistiu da requisição - paramos o nosso processamento, já que não faz sentido continuar sendo que o cliente não vai querer mais a resposta.
+Enquanto não cancelamos o request, a execução do código ocorre normalmente. A partir do momento que cancelamos o request, paramos o nosso processamento, já que não faz sentido continuar sendo que o cliente não vai querer mais a resposta.
 
 ![image](https://user-images.githubusercontent.com/50757499/116161977-330d1780-a6cb-11eb-9dba-62499a494b30.png)
 
