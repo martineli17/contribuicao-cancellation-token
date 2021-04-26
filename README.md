@@ -42,7 +42,7 @@ namespace TesteCancellationToken.Controllers
             cancellationToken.Register(() => LoggerCancelExtra(), true);
         }
 
-        private async Task<List<string>> Execute(CancellationToken cancellationToken)
+        private Task<List<string>> Execute(CancellationToken cancellationToken)
         {
             var returns = new List<string>();
             int countTasks = 0;
@@ -50,17 +50,17 @@ namespace TesteCancellationToken.Controllers
             while (!cancellationToken.IsCancellationRequested)
             {
                 Thread.Sleep(1000);
-                returns.Add(await Action(++countTasks, cancellationToken));
+                countTasks++;
+                var taskName = $"Task [{countTasks}]";
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    returns.Add($"{taskName} cancelada");
+                    break;
+                }
+                _logger.LogInformation($"{taskName} iniciada");
+                returns.Add($"{taskName} iniciada");
             }
-            return returns;
-        }
-
-        private Task<string> Action(int taskNumber, CancellationToken cancellationToken)
-        {
-            var taskName = $"Task [{taskNumber}]";
-            if (cancellationToken.IsCancellationRequested) return Task.FromResult($"{taskName} cancelada.");
-            _logger.LogInformation($"{taskName} iniciada");
-            return Task.FromResult($"{taskName} iniciada");
+            return Task.FromResult(returns);
         }
         
         private void LoggerCancel(List<string> listParam) =>
