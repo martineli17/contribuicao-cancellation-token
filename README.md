@@ -9,7 +9,7 @@ Imagine o seguinte cenário:
 Em suma: os chefs de cozinha gastaram tempo e esforço e o restaurante gastou ingredientes em um pedido que não era mais necessário.
 
 Essa contextualização foi para dizer que na área de desenvolvimento de aplicações também ocorre essa situação.
-Muitas das vezes, quando construímos nossas aplicações, há possilidades de quem estiver consumindo aquele serviço, desistir da tarefa/requisição antes mesmo dela ser finalizada.
+Muitas das vezes, quando construímos nossas aplicações, há possilidades de quem estiver consumindo aquele serviço desistir da tarefa/requisição antes mesmo dela ser finalizada.
 Nós, como desenvolvedores, devemos desenvolver softwares pensando nessa possibilidade: não podemos gastar mais recursos com algo que não será mais necessário, há outros processos aguardando. 
 
 Mas, aí vem a pergunta: como podemos implementar isso em nosso software?
