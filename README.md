@@ -91,9 +91,14 @@ Segue exemplo que você pode utilizar:
  {
      var cancellationTokenSource = new CancellationTokenSource();
      var cancellationToken = cancellationTokenSource.Token;
-     if (alguma condição) 
-             cancellationTokenSource.Cancel(); //cancela o cancellationToken
      return cancellationTokenSource;
+ }
+ 
+ public void ProcessoPrincipal()
+ {
+     var cancellationTokenSource = CriarCancellationTokenSource();
+     if (alguma condição) 
+        cancellationTokenSource.Cancel(); //cancela o cancellationToken
  }
 ```
 
