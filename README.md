@@ -96,7 +96,7 @@ Segue exemplo que você pode utilizar:
  public void ProcessoPrincipal()
  {
      var cancellationTokenSource = CriarCancellationTokenSource();
-      var cancellationToken = cancellationTokenSource.Token;
+     var cancellationToken = cancellationTokenSource.Token;
      if (alguma condição) 
         cancellationTokenSource.Cancel(); //cancela o cancellationToken
  }
